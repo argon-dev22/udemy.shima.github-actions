@@ -30,7 +30,6 @@ jobs:
           path: backend/coverage/**
           retention-days: 5
       - uses: actions/upload-artifact@v4
-        if: always()
         with:
           name: dist
           path: backend/dist/index.js
