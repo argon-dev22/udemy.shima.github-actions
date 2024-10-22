@@ -22,10 +22,10 @@ jobs:
         
       - run: npm ci
       - run: npm install --save-dev stepci@2.6.3
-      - run: npm run test -- --coverage
+      - run: npm install --save-dev wait-on@7.0.1
       - run: npm run build
-
       - run: node dist/index.js &
+      - run: wait-on -t 10000 http://localhost:8080/api/health
       - run: npm run test:api
 
       - uses: actions/upload-artifact@v4
