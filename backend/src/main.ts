@@ -6,6 +6,7 @@ import { sum } from './sum'
 
 const PORT = process.env.PORT ?? 8080
 // フロントエンドの URL を 'http://frontend.example.com' のように指定してください。
+// ローカルで開発する場合は undefined のままにしてください。
 const CORS_ORIGIN = undefined
 
 const app = express()
