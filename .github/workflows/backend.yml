@@ -19,9 +19,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
+        
       - run: npm ci
+      - run: npm install --save-dev stepci@2.6.3
       - run: npm run test -- --coverage
       - run: npm run build
+
+      - run: node dist/index.js &
+      - run: npm run test:api
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
