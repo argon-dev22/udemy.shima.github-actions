@@ -1,0 +1,6 @@
+./backend/.gitignore
+./backend/.git
+./backend/.tool-versions
+./build.sh
+./test.sh
+./dist
